@@ -1,20 +1,9 @@
 const express = require('express');
 
-const UserController = require('../../controllers/user-controller');
-const { AuthRequestValidators } = require('../../middlewares/index');
+const v1ApiRoutes = require('./v1/index');
 
 const router = express.Router();
 
-router.post(
-  '/signup',
-  AuthRequestValidators.validateUserAuth,
-  UserController.create
-);
-
-router.post(
-  '/signin',
-  AuthRequestValidators.validateUserAuth,
-  UserController.signIn
-);
+router.use('/v1', v1ApiRoutes);
 
 module.exports = router;

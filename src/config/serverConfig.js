@@ -4,5 +4,7 @@ dotenv.config();
 
 module.exports = {
     PORT: process.env.PORT,
-    SALT: brypt.genSaltSync(10)
+    SALT: brypt.genSaltSync(10),
+    JWT_KEY:process.env.JWT_KEY
+
 };

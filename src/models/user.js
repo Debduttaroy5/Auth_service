@@ -10,6 +10,10 @@ module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
       // define association here
+      this.belongsToMany(models.Role, {
+      through: 'User_Roles',
+});
+
     }
   }
 
